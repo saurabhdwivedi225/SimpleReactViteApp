@@ -1,16 +1,24 @@
 import { useState } from "react";
 
 function Todo() {
-    const [todos, setTodos] = useState(['todo1', 'todo2']);
+  // Declare a state variable `todos` using useState
+  // This variable will hold an array of todo items (strings)
+  const [todos, setTodos] = useState(['todo1', 'todo2']);
 
-    return (
-        <ul>
-            {todos.map(todo => (
-                <li key={todo}>{todo}</li>
-            ))}
-            <button onClick={() => setTodos([...todos, 'anotherOne'])}>Add todo</button>
-        </ul>
-    );
+  // Render the todo list
+  return (
+    <ul>
+      {/* Map over the todos array and render each todo item as an <li> element */}
+      {todos.map(todo => (
+        <li key={todo}>{todo}</li>
+      ))}
+
+      {/* Add Button to add a new todo item */}
+      <button onClick={() => setTodos([...todos, 'anotherOne'])}>
+        Add todo
+      </button>
+    </ul>
+  );
 }
 
 export default Todo;
